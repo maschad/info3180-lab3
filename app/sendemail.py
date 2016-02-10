@@ -1,26 +1,25 @@
 import smtplib
 
-def send(fromaddr,fromname,toname,subject,msg):
+def send(fromaddr,fromname,subject,msg):
 
     toaddr  = 'chad.nehemiah94@gmail.com'
 
-    message = """From: {fromaddr} <{fromname}>
+    message = """From: {} <{}>
 
-    To: {toaddr} <{toname}>
+    To: {} Chad
 
-    Subject: {subject}
+    Subject: {}
 
-    {msg}
+    {}
 
     """
 
     messagetosend = message.format(
                                 fromname,
                                 fromaddr,
-                                toname,
                                 toaddr,
                                 subject,
-                                message)
+                                msg)
 
     # Credentials (if needed)
 

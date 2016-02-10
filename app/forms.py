@@ -10,13 +10,13 @@ from wtforms.validators import Required,Email
 
 class EmailPasswordForm(Form):
 
-    name = TextField('Name',validators=[Required()])
+    name = TextField('Name',validators=[Required("Please enter your name. ")])
 
-    email = TextField('Email',validators=[Required(),Email()])
+    email = TextField('Email',validators=[Required("Please enter your email."),Email()])
 
-    subject = TextField('Subject',validators=[Required()])
+    subject = TextField('Subject',validators=[Required("Please enter the subject.")])
 
-    message = TextAreaField('Message',validators=[Required()])
+    message = TextAreaField('Message',validators=[Required("Please enter a message. ")])
 
     submit = SubmitField("Send")
 

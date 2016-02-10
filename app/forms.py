@@ -8,6 +8,6 @@ from wtforms.validators import Required,Email
 
 class EmailPasswordForm(Form):
 
-    username = TextField('Username',validators=[Required()])
+    name = TextField('Name',validators=[Required()])
 
     email = TextField('Email',validators=[Required(),Email()])

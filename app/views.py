@@ -15,11 +15,18 @@ from .forms import EmailPasswordForm
 # Routing for your application.
 ###
 
-@app.route('/',methods=["GET","POST"])
-def theform():
-    """Render website's home page."""
+@app.route('/')
+def home():
+    """
+    :return: Render website's home page
+    """
+    return render_template('home.html')
+
+@app.route('/contact',methods=["GET","POST"])
+def contact():
+    """Render website's contact page."""
     form = EmailPasswordForm(csrf_enabled=False)
-    return render_template('home.html',form=form)
+    return render_template('contact.html',form=form)
 
 
 @app.route('/about/')

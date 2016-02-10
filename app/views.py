@@ -9,6 +9,7 @@ This file creates your application.
 from app import app
 from flask import render_template, request, redirect, url_for
 from .forms import EmailPasswordForm
+from .sendemail import *
 
 ###
 # Routing for your application.
@@ -25,7 +26,9 @@ def home():
 def contact():
     """Render website's contact page."""
     form = EmailPasswordForm(csrf_enabled=False)
+    send(form.email.data,form.name.data,'Chad',form.subject.data,form.message.data)
     return render_template('contact.html',form=form)
+
 
 @app.route('/about/')
 def about():

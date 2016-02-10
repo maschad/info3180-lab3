@@ -2,6 +2,8 @@ from flask.ext.wtf import Form
 
 from wtforms.fields import TextField,TextAreaField,SubmitField
 
+from .sendemail import *
+
 #other fields include PasswordField
 
 from wtforms.validators import Required,Email
@@ -15,3 +17,7 @@ class EmailPasswordForm(Form):
     subject = TextField('Subject',validators=[Required()])
 
     message = TextAreaField('Message',validators=[Required()])
+
+    submit = SubmitField("Send")
+
+

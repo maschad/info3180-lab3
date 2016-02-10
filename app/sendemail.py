@@ -1,42 +1,42 @@
 import smtplib
 
-fromaddr = 'chad.nehemiah94@gmail.com'
+def send(fromadd,fromname,toname,subject,msg):
 
-toaddr  = '{{toaddr}}'
+    toaddr  = 'chad.nehemiah94@gmail.com'
 
-message = """From: {fromadd} <{fromname}>
+    message = """From: {fromadd} <{fromname}>
 
-To: {toaddr} <{toname}>
+    To: {toaddr} <{toname}>
 
-Subject: {subject}
+    Subject: {subject}
 
-{message}
+    {msg}
 
-"""
+    """
 
-messagetosend = message.format(
-                            fromname,
-                            fromadd,
-                            toname,
-                            toaddr,
-                            subject,
-                            message)
+    messagetosend = message.format(
+                                fromname,
+                                fromadd,
+                                toname,
+                                toaddr,
+                                subject,
+                                message)
 
-# Credentials (if needed)
+    # Credentials (if needed)
 
-username = 'chad.nehemiah94@gmail.com'
+    username = 'chad.nehemiah94@gmail.com'
 
-password = '{eyjkezfhkjnyeqpn}'
+    password = '{eyjkezfhkjnyeqpn}'
 
 
-# The actual mail send
+    # The actual mail send
 
-server = smtplib.SMTP('smtp.gmail.com:587')
+    server = smtplib.SMTP('smtp.gmail.com:587')
 
-server.starttls()
+    server.starttls()
 
-server.login(username,password)
+    server.login(username,password)
 
-server.sendmail(fromaddr,toaddr, messagetosend)
+    server.sendmail(fromadd,toaddr, messagetosend)
 
-server.quit()
+    server.quit()

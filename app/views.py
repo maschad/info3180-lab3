@@ -8,22 +8,25 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for
+from .forms import EmailPasswordForm
 
 
 ###
 # Routing for your application.
 ###
 
-@app.route('/')
-def home():
+@app.route('/',methods=["GET","POST"])
+def theform():
     """Render website's home page."""
-    return render_template('home.html')
+    form = EmailPasswordForm(csrf_enabled=False)
+    return render_template('home.html',form=form)
 
 
 @app.route('/about/')
 def about():
     """Render the website's about page."""
     return render_template('about.html')
+
 
 
 ###

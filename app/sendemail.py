@@ -26,7 +26,7 @@ messagetosend = message.format(
 
 username = 'chad.nehemiah94@gmail.com'
 
-password = '{}'
+password = '{eyjkezfhkjnyeqpn}'
 
 
 # The actual mail send

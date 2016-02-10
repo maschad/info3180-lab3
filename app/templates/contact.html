@@ -13,20 +13,28 @@
         </div>
         <form action="{{ url_for('contact') }}" method="post" class="form-inline">
             <div class="well well-lg">
-                <fieldset class="form-group">
-                    <label for="name">Name</label>
-                    <div>
-                        <small class="text-muted">Please enter your full name</small>
-                    </div>
-                    <div>{{ form.name }}</div>
-                </fieldset>
-                  <fieldset class="form-group">
-                    <label for="email">E-mail</label>
-                    <div>
-                        <small class="text-muted">Please enter your e-mail address</small>
-                    </div>
-                    <div>{{ form.email }}</div>
-                </fieldset>
+                <label for="name">Name</label>
+                <div>
+                    <small class="text-muted">Please enter your full name</small>
+                </div>
+                <div>{{ form.name }}</div>
+                <br> </br>
+                <label for="email">E-mail</label>
+                <div>
+                    <small class="text-muted">Please enter your e-mail address</small>
+                </div>
+                <div>{{ form.email }}</div>
+                <br> </br>
+                <label for="subject">Subject</label>
+                <div>{{ form.subject }}</div>
+                <br> </br>
+                <label for="message">Message</label>
+                <div>
+                    <small class="text-muted">Please enter the message you want to send</small>
+                </div>
+                <div>{{ form.message }}</div>
+                <br> </br>
+                <button type="submit" class="btn btn-default">Send</button>
             </div>
         </form>
     </div>

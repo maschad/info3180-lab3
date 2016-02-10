@@ -10,7 +10,6 @@ from app import app
 from flask import render_template, request, redirect, url_for
 from .forms import EmailPasswordForm
 
-
 ###
 # Routing for your application.
 ###
@@ -27,7 +26,6 @@ def contact():
     """Render website's contact page."""
     form = EmailPasswordForm(csrf_enabled=False)
     return render_template('contact.html',form=form)
-
 
 @app.route('/about/')
 def about():

@@ -1,10 +1,10 @@
 import smtplib
 
-def send(fromadd,fromname,toname,subject,msg):
+def send(fromaddr,fromname,toname,subject,msg):
 
     toaddr  = 'chad.nehemiah94@gmail.com'
 
-    message = """From: {fromadd} <{fromname}>
+    message = """From: {fromaddr} <{fromname}>
 
     To: {toaddr} <{toname}>
 
@@ -16,7 +16,7 @@ def send(fromadd,fromname,toname,subject,msg):
 
     messagetosend = message.format(
                                 fromname,
-                                fromadd,
+                                fromaddr,
                                 toname,
                                 toaddr,
                                 subject,
@@ -26,7 +26,7 @@ def send(fromadd,fromname,toname,subject,msg):
 
     username = 'chad.nehemiah94@gmail.com'
 
-    password = '{eyjkezfhkjnyeqpn}'
+    password = 'eyjkezfhkjnyeqpn'
 
 
     # The actual mail send
@@ -37,6 +37,6 @@ def send(fromadd,fromname,toname,subject,msg):
 
     server.login(username,password)
 
-    server.sendmail(fromadd,toaddr, messagetosend)
+    server.sendmail(fromaddr,toaddr, messagetosend)
 
     server.quit()

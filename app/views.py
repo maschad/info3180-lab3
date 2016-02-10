@@ -26,8 +26,9 @@ def home():
 def contact():
     """Render website's contact page."""
     form = EmailPasswordForm(csrf_enabled=False)
-    send(form.email.data,form.name.data,'Chad',form.subject.data,form.message.data)
     return render_template('contact.html',form=form)
+    send(form.email.data,form.name.data,'Chad',form.subject.data,form.message.data)
+
 
 
 @app.route('/about/')
